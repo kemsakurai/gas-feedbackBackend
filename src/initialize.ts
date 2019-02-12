@@ -11,9 +11,9 @@ export const initialize = (): void => {
     range.setBackground('yellow');
     const headers: string[] = new Array();
     headers.push('URL');
-    headers.push('Browser Infomation');
     headers.push('Comment');
-    headers.push('Image Path');
+    headers.push('Image Path');    
+    headers.push('Browser Infomation');
     range.setValues([headers]);
   }
   Logger.log('initialize end');
