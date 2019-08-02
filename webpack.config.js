@@ -1,6 +1,6 @@
 const path = require('path');
 const GasPlugin = require("gas-webpack-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin')   
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -30,9 +30,10 @@ module.exports = {
   },
   plugins: [
     new GasPlugin(),
-    new HtmlWebpackPlugin({
-      filename: "./updateSchedule.html",
-      template: "./src/updateSchedule.html"
-    })
+    new CopyWebpackPlugin([
+      { from: 'src/index.html' },
+      { from: 'src/css.html' },
+      { from: 'src/feedback.jq1102.min.js.html' },
+    ])
   ]
 };

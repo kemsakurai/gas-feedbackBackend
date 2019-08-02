@@ -3,9 +3,7 @@ import { doGet } from './doGet';
 import { doPost } from './doPost';
 
 function onOpen() {
-  const menu = [
-    { name: 'Initialize', functionName: 'initialize' }
-  ];
+  const menu = [{ name: 'Initialize', functionName: 'initialize' }];
   SpreadsheetApp.getActiveSpreadsheet().addMenu('gas-feedbackBackend', menu);
 }
 

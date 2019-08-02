@@ -12,7 +12,7 @@ export const initialize = (): void => {
     const headers: string[] = new Array();
     headers.push('URL');
     headers.push('Comment');
-    headers.push('Image Path');    
+    headers.push('Image Path');
     headers.push('Browser Infomation');
     range.setValues([headers]);
   }

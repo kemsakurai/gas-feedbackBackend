@@ -1,4 +1,4 @@
-const id: string = PropertiesService.getScriptProperties().getProperty("FOLDER_ID");
+const id: string = PropertiesService.getScriptProperties().getProperty('FOLDER_ID');
 import Utils from './Utils';
 export const doPost = (e): GoogleAppsScript.Content.TextOutput => {
   Logger.log('doPost start');
@@ -31,8 +31,20 @@ export const doPost = (e): GoogleAppsScript.Content.TextOutput => {
   const platform = browser['platform'];
   const userAgent = browser['userAgent'];
   const plugins: string = browser['plugins'].join();
-  sheet.appendRow([url, comment, file.getUrl(), appCodeName, appName, appVersion,cookieEnabled, onLine, platform, userAgent,plugins]);
-  
+  sheet.appendRow([
+    url,
+    comment,
+    file.getUrl(),
+    appCodeName,
+    appName,
+    appVersion,
+    cookieEnabled,
+    onLine,
+    platform,
+    userAgent,
+    plugins
+  ]);
+
   // return Response
   const output = ContentService.createTextOutput();
   output.setMimeType(ContentService.MimeType.JSON);
