@@ -1,11 +1,23 @@
-export const doGet = (): GoogleAppsScript.Content.TextOutput => {
+export const doGet = (e): GoogleAppsScript.Content.TextOutput => {
   Logger.log('doGet start');
   let output = ContentService.createTextOutput();
   output.setMimeType(ContentService.MimeType.JSON);
+  let responseText;
   let result: any = new Object();
   result.html = HtmlService.createTemplateFromFile('index')
     .evaluate()
     .getContent();
-  output.setContent(JSON.stringify(result));
+  let callback = e.parameter.callback;
+  if (callback) {
+    responseText = callback + '(' + JSON.stringify(result) + ');';
+    //Mime Typeをapplication/javascriptに設定
+    output.setMimeType(ContentService.MimeType.JAVASCRIPT);
+    output.setContent(responseText);
+  } else {
+    responseText = JSON.stringify(result);
+    //Mime Typeをapplication/jsonに設定
+    output.setMimeType(ContentService.MimeType.JSON);
+    output.setContent(responseText);
+  }
   return output;
 };
