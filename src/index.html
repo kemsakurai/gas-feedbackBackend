@@ -1,11 +1,6 @@
 <!-- /container -->
 <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
 <script type="text/javascript">    
-    var script = document.createElement('script');
-    script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js';
-    document.body.appendChild(script);
-</script>
-<script type="text/javascript">    
     var jq1102 = jQuery.noConflict(true);
 </script>
 <?!= HtmlService.createHtmlOutputFromFile('feedback.jq1102.min.js').getContent(); ?>

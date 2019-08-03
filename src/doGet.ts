@@ -1,7 +1,6 @@
 export const doGet = (e): GoogleAppsScript.Content.TextOutput => {
   Logger.log('doGet start');
   let output = ContentService.createTextOutput();
-  output.setMimeType(ContentService.MimeType.JSON);
   let responseText;
   let result: any = new Object();
   result.html = HtmlService.createTemplateFromFile('index')
