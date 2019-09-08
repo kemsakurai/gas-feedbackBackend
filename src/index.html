@@ -8,7 +8,7 @@
     
     jq1102(function () {
         jq1102.feedback({
-            ajaxURL: "<?!= ScriptApp.getService().getUrl(); ?>",
+            ajaxURL: "<?!= getFunctionsURL(); ?>",
             html2canvasURL: "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js",
             feedbackButton: "#feedback-btn",
             initButtonText: "\u000Aフィードバックを送る",

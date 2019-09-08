@@ -1,4 +1,3 @@
-const id: string = PropertiesService.getScriptProperties().getProperty('FOLDER_ID');
 import Utils from './Utils';
 export const doPost = (e): GoogleAppsScript.Content.TextOutput => {
   Logger.log('doPost start');
@@ -7,15 +6,13 @@ export const doPost = (e): GoogleAppsScript.Content.TextOutput => {
   const data = JSON.parse(jsonString);
 
   const url = data.url;
-  const browser = JSON.stringify(data.browser);
+  const browser = data.browser;
   const comment = data.note;
 
   // Get sheet Object
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getSheetByName(Utils.getFeedBackSheetName());
-
-  // Save spreadsheet
-  const lastRow = sheet.getLastRow();
+  const id = Utils.getImageFolderId();
   // Save image png
   const decoded = Utilities.base64Decode(data.img.split(';base64,')[1]);
   const fileName = Utilities.formatDate(new Date(), 'JST', 'yyyy/MM/dd (E) HH:mm:ss Z') + '.png';
