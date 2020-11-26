@@ -59,9 +59,15 @@
     ]
   },
   "dependencies": {
+<<<<<<< HEAD
     "@types/node": "^10.17.47",
     "merge": "^2.1.0",
     "npm": "^6.14.9",
+=======
+    "@types/node": "^10.14.15",
+    "merge": ">=1.2.1",
+    "npm": "^6.13.4",
+>>>>>>> 57cc5430a1cf6a6198b32cd4defaaa22c2504531
     "randomatic": ">=3.0.0"
   }
 }
